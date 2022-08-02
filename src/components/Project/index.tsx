@@ -72,7 +72,10 @@ export const Project = (): JSX.Element => {
             {repository.description.substring(0, 129)}
           </Text>
           <ProjectLinks>
-            <ProjectLink target="_blank" href={repository.git_url}>
+            <ProjectLink
+              target="_blank"
+              href={repository.git_url.replace("git://", "https://")}
+            >
               <FaGithub /> Github Code
             </ProjectLink>
             {repository.homepage && (
